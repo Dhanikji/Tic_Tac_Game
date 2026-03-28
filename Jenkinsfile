@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh '''
                     helm uninstall ${APP_NAME} -n react-app || true
-                    helm install ${APP_NAME} ./helm-chart \
+                    helm install ${APP_NAME} ./tic-tac \
                     -n react-app \
                     --set image.repository=${REGISTRY}/${APP_NAME} \
                     --set image.tag=${BUILD_NUMBER}
